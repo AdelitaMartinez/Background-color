@@ -1,7 +1,6 @@
 
 
 .container{
-  border: 1px solid black;
 
   width: 95%;
   height: 100vh;
@@ -11,7 +10,6 @@
 }
 
 .hex-colors{
-  border: 1px solid black;
 
   text-align: center;
 }
@@ -23,7 +21,6 @@ hex-colors h1{
 }
 
 .hex-colors h2{
-  border: 1px solid black;
   font-size: 2rem;
   margin-top: 15%;
 }
