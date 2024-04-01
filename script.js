@@ -1,41 +1,38 @@
-const apiKey = "GrF0AuxFoZjqTyBqwXeedg==vHKcVvMuZwMynnSd"
+const apiKey = "GrF0AuxFoZjqTyBqwXeedg==vHKcVvMuZwMynnSd";
 
-const option = {
-  method: "GET", 
+const options = {
+  method: "GET",
   headers: {
     "X-Api-Key": apiKey
   }
-}
+};
 
-const apiURL = "https://api.api-ninjas.com/v1/quotes?category=funny"
+const apiURL = "https://api.api-ninjas.com/v1/quotes?category=funny";
 
-async function generate(){
+async function generate() {
+  try {
+    const response = await fetch(apiURL, options);
+    console.log("Response status:", response.status);
+    if (!response.ok) {
+      throw new Error("Network response was not ok");
+    }
+    const data = await response.json();
+    console.log("Response data:", data);
 
-const response = await fetch(apiURL, options)
-const data = await response.json()
+    if (data && data.length > 0) {
+      const quote = data[0].quote;
+      const author = data[0].author;
 
-console.log(data[0])
-
-let quotes = {
-  "― Mahatma Gandhi": '“Live as if you were to die tomorrow. Learn as if you were to live forever.”',
-  "― Albert Einstein": '“There are only two ways to live your life. One is as though nothing is a miracle. The other is as though everything is a miracle.”',
-  "― C.S. Lewis": '“You can never get a cup of tea large enough or a book long enough to suit me.”'
-}
-  let authors = Object.keys(quotes);
-
-  let author =authors[Math.floor(Math.random() * authors.length)]
-
-  let quote = quotes[author]
-
-  document.querySelector("#quote").textContent = quote
-  document.querySelector("#author").textContent = author
-
-  window.onload = function(){
-    generate()
+      document.querySelector("#quote").textContent = quote;
+      document.querySelector("#author").textContent = author;
+    } else {
+      console.error("No quotes found!");
+    }
+  } catch (error) {
+    console.error("Error fetching quotes:", error);
   }
-
-  // document.getElementById("quote").innerHTML = quote
-
-  // document.getElementById("author").innerHTML = author
-
 }
+
+window.onload = function () {
+  generate();
+};
