@@ -1,5 +1,7 @@
+// API key for accessing the API
 const apiKey = "GrF0AuxFoZjqTyBqwXeedg==vHKcVvMuZwMynnSd";
 
+// Options for the fetch request, including the API key
 const options = {
   method: "GET",
   headers: {
@@ -7,15 +9,19 @@ const options = {
   }
 };
 
+// URL of the API endpoint for fetching quotes
 const apiURL = "https://api.api-ninjas.com/v1/quotes?category=funny";
 
+// Fetches quote from API and updates the DOM with quote/author
 async function generate() {
   try {
+    // Fetch the data from the API
     const response = await fetch(apiURL, options);
     console.log("Response status:", response.status);
     if (!response.ok) {
       throw new Error("Network response was not ok");
     }
+    // Parse the response data as JSON
     const data = await response.json();
     console.log("Response data:", data);
 
