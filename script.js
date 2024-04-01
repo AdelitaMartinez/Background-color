@@ -1,15 +1,20 @@
-function generate(){
+const apiKey = "GrF0AuxFoZjqTyBqwXeedg==vHKcVvMuZwMynnSd"
 
-  const apiKey = "GrF0AuxFoZjqTyBqwXeedg==vHKcVvMuZwMynnSd"
-
-  const option = {
-    method: "GET", 
-    headers: {
-      "X-Api-Key": apiKey
-    }
+const option = {
+  method: "GET", 
+  headers: {
+    "X-Api-Key": apiKey
   }
+}
 
-  const apiURL = "https://api.api-ninjas.com/v1/quotes?category=funny"
+const apiURL = "https://api.api-ninjas.com/v1/quotes?category=funny"
+
+async function generate(){
+
+const response = await fetch(apiURL, options)
+const data = await response.json()
+
+console.log(data[0])
 
 let quotes = {
   "― Mahatma Gandhi": '“Live as if you were to die tomorrow. Learn as if you were to live forever.”',
