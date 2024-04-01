@@ -4,7 +4,7 @@ body {
 
 .container{
   width: 95%;
-  height: 100vh;
+  height: 95vh;
   display: flex;
   text-align: center;
 }
@@ -25,6 +25,10 @@ body {
 
 .quotes p, .quotes h3 {
   font-size: 1.5rem;
+}
+
+button{
+  margin-top: -20px;
 }
 
 @media(max-width: 480px) {
