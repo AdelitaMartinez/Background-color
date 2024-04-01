@@ -25,20 +25,24 @@ async function generate() {
     const data = await response.json();
     console.log("Response data:", data);
 
+    // Check if data is available
     if (data && data.length > 0) {
       const quote = data[0].quote;
       const author = data[0].author;
+      
 
+      // Update the DOM with the quote and author
       document.querySelector("#quote").textContent = quote;
       document.querySelector("#author").textContent = author;
     } else {
       console.error("No quotes found!");
     }
   } catch (error) {
+    // Log any errors that occur dirng fetching or parsing
     console.error("Error fetching quotes:", error);
   }
 }
-
-window.onload = function () {
-  generate();
-};
+// // Initialize the page by generating a random quote when the window is loaded
+// window.onload = function () {
+//   generate();
+// };
