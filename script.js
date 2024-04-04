@@ -44,7 +44,7 @@ async function generate() {
       console.error("No quotes found!");
     }
   } catch (error) {
-    // Log any errors that occur dirng fetching or parsing
+    // Log any errors that occur during fetching or parsing
     console.error("Error fetching quotes:", error);
   }
 }
