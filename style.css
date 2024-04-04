@@ -555,9 +555,9 @@ video {
 }
 
 body {
-  background: #06bcc1;
+  background-image: url("./anna-atkins-rNBaaxyeWWM-unsplash.jpg");
+  background-size: cover;
 }
-
 .container{
   width: 95%;
   height: 95vh;
@@ -576,15 +576,26 @@ body {
   padding: 0 50px;
   color: gray;
   background-color: #f4edea;
-  border: 10px solid #f4d1ae;
+  border: 10px solid #06632A;
 }
 
 .quotes p, .quotes h3 {
   font-size: 1.5rem;
 }
 
+.quotes p{
+  font-family: serif;
+  font-weight: 600;
+}
+
+.quotes h3{
+  font-style: italic;
+  font-family: serif;
+  padding-top: 30px;
+}
+
 button{
-  margin-top: -20px;
+  margin-top: -100px;
 }
 
 @media(max-width: 480px) {
