@@ -1,4 +1,5 @@
-// API key for accessing the API
+// API key for accessing the API, please uncomment and add your own API key below
+// const apiKey = "Your-Api-Key-Goes-Here" <----
 const apiKey = "GrF0AuxFoZjqTyBqwXeedg==vHKcVvMuZwMynnSd";
 
 // Options for the fetch request, including the API key
